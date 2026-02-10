@@ -1,0 +1,250 @@
+/* =========================
+   PAGE + LAYOUT
+   ========================= */
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:"Times New Roman", Times, serif;
+  background:#000;
+}
+
+main{
+  margin-left:175px;
+  background:#fff;
+  min-height:100vh;
+}
+
+/* =========================
+   TOP RED HEADER
+   ========================= */
+header{
+  background:#ff0000;
+  padding:26px 0;
+  border-bottom:1px solid #cfcfcf;
+}
+
+header p{
+  margin:0;
+  text-align:center;
+  font-family:"Comic Sans MS","Comic Sans",cursive;
+  font-size:40px;
+  font-weight:700;
+  color:#000;
+}
+
+h1{
+  margin:18px 0 0;
+  text-align:center;
+  font-size:40px;
+  font-weight:700;
+  color:#000;
+}
+
+/* =========================
+   LEFT NAV BUTTONS
+   ========================= */
+#menuItems{
+  position:fixed;
+  left:0;
+  top:0;
+  width:175px;
+  height:100vh;
+  background:#000;
+  padding-top:6px;
+  z-index:100;
+}
+
+#menuItems button{
+  width:100%;
+  display:block;
+  padding:10px 0;
+  border:1px solid #0010a8;
+  background:#0a23ff;
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:16px;
+  cursor:pointer;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+
+#menuItems button:hover{
+  background:#b8860b;   /* yellow/gold */
+  border-color:#8a6508;
+  color:#fff;
+}
+
+/* Recent Articles turns gold on hover */
+#recentArticles:hover{
+  background:#b8860b;
+  border-color:#8a6508;
+}
+
+/* =========================
+   JUMP MENU (shows on hover)
+   ========================= */
+#jumpMenu{
+  list-style:none;
+  margin:0;
+  padding:8px 0 10px;
+  display:none;
+  background:#b8860b;
+  border-left:1px solid #8a6508;
+  border-right:1px solid #8a6508;
+  border-bottom:1px solid #8a6508;
+}
+
+#recentArticles:hover + #jumpMenu,
+#jumpMenu:hover{
+  display:block;
+}
+
+#jumpMenu li a{
+  display:block;
+  text-align:center;
+  padding:2px 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:14px;
+  text-decoration:none;
+  color:#0000ff;
+  background:transparent;
+  transition: background-color .15s, color .15s;
+}
+
+/* hover jump menu item: blue highlight + white text */
+#jumpMenu li a:hover{
+  background:#0a23ff;
+  color:#fff;
+}
+
+/* =========================
+   ARTICLES GRID
+   ========================= */
+#container{
+  width:92%;
+  margin:0 auto;
+  padding:18px 0 40px;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  column-gap:44px;
+  row-gap:56px;
+  align-items:start;
+}
+
+article h2{
+  margin:0 0 12px;
+  font-size:16px;
+  font-weight:700;
+  color:#a9a9a9;
+  transition: color 2s, font-weight 2s;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   ARTICLE HOVER EFFECTS (RUBRIC)
+   - light text by default
+   - hover: darker + expands (2 seconds)
+   - mouse out: returns (2 seconds)
+   ========================= */
+article{
+  color:#b9b9b9;
+  height:300px;                 /* collapsed */
+  overflow:hidden;
+  padding:0 4px;
+  display:flex;
+  flex-direction:column;
+  transition:height 2s, color 2s;
+}
+
+/* expands + darkens on hover */
+article:hover{
+  color:#333;
+  height:430px;                 /* expanded */
+}
+
+article:hover h2{
+  color:#000;
+  font-weight:800;
+}
+
+/* Main article text */
+article > p:first-of-type{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  /*line-height:1.25; */
+  text-align:justify;
+  flex:1;
+  overflow:hidden; 
+
+  /* text-justify:inter-word; */
+}
+
+/* Read more line */
+article > p:last-of-type{
+  margin:10px 0 0;
+  flex-shrink:0; 
+}
+
+/* =========================
+   FIRST LETTER (36px, Times New Roman)
+   ========================= */
+article > p:first-of-type::first-letter{
+  font-family:"Times New Roman", Times, serif;
+  font-size:36px;
+  line-height:1;
+  float:none;
+  margin-right:4px;
+  color:inherit;
+}
+
+/* =========================
+   READ MORE LINKS + ICON (Google only)
+   ========================= */
+article p:last-of-type a{
+  font-family:"Times New Roman", Times, serif;
+  font-size:13px;
+  color:#0000ff;
+  text-decoration:underline;
+}
+
+/* Use local arrow.png file */
+article a[href*="google.com"]::after{
+  content:"";
+  display:inline-block;
+  width:28px;
+  height:28px;
+  margin-left:6px;
+  transform:translateY(4px);
+  background:url("arrow.png") no-repeat center / contain;
+}
+
+/* =========================
+   THANK YOU BOX
+   ========================= */
+/* #thanks{
+  width:92%;
+  margin:0 auto 24px;
+  text-align:right;
+} */
+
+#thanks{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  background: #87cefa;          
+  border: 2px solid #333;
+  padding: 18px 26px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 26px;
+  margin: 0;
+}
+
+/* =========================
+   FOOTER (simple)
+   ========================= */
+footer{
+  border-top:1px solid #ddd;
+  padding:16px 30px 30px;
+}
