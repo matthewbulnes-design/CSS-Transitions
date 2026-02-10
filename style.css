@@ -1,6 +1,4 @@
-/* =========================
-   PAGE + LAYOUT
-   ========================= */
+
 *{ box-sizing:border-box; }
 
 body{
@@ -15,9 +13,7 @@ main{
   min-height:100vh;
 }
 
-/* =========================
-   TOP RED HEADER
-   ========================= */
+
 header{
   background:#ff0000;
   padding:26px 0;
@@ -41,9 +37,7 @@ h1{
   color:#000;
 }
 
-/* =========================
-   LEFT NAV BUTTONS
-   ========================= */
+
 #menuItems{
   position:fixed;
   left:0;
@@ -69,20 +63,17 @@ h1{
 }
 
 #menuItems button:hover{
-  background:#b8860b;   /* yellow/gold */
+  background:#b8860b;  
   border-color:#8a6508;
   color:#fff;
 }
 
-/* Recent Articles turns gold on hover */
 #recentArticles:hover{
   background:#b8860b;
   border-color:#8a6508;
 }
 
-/* =========================
-   JUMP MENU (shows on hover)
-   ========================= */
+
 #jumpMenu{
   list-style:none;
   margin:0;
@@ -111,15 +102,12 @@ h1{
   transition: background-color .15s, color .15s;
 }
 
-/* hover jump menu item: blue highlight + white text */
 #jumpMenu li a:hover{
   background:#0a23ff;
   color:#fff;
 }
 
-/* =========================
-   ARTICLES GRID
-   ========================= */
+
 #container{
   width:92%;
   margin:0 auto;
@@ -140,15 +128,10 @@ article h2{
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* =========================
-   ARTICLE HOVER EFFECTS (RUBRIC)
-   - light text by default
-   - hover: darker + expands (2 seconds)
-   - mouse out: returns (2 seconds)
-   ========================= */
+
 article{
   color:#b9b9b9;
-  height:300px;                 /* collapsed */
+  height:300px;               
   overflow:hidden;
   padding:0 4px;
   display:flex;
@@ -156,10 +139,10 @@ article{
   transition:height 2s, color 2s;
 }
 
-/* expands + darkens on hover */
+
 article:hover{
   color:#333;
-  height:430px;                 /* expanded */
+  height:430px;                 
 }
 
 article:hover h2{
@@ -167,7 +150,6 @@ article:hover h2{
   font-weight:800;
 }
 
-/* Main article text */
 article > p:first-of-type{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
@@ -177,18 +159,14 @@ article > p:first-of-type{
   flex:1;
   overflow:hidden; 
 
-  /* text-justify:inter-word; */
 }
 
-/* Read more line */
 article > p:last-of-type{
   margin:10px 0 0;
   flex-shrink:0; 
 }
 
-/* =========================
-   FIRST LETTER (36px, Times New Roman)
-   ========================= */
+
 article > p:first-of-type::first-letter{
   font-family:"Times New Roman", Times, serif;
   font-size:36px;
@@ -198,9 +176,7 @@ article > p:first-of-type::first-letter{
   color:inherit;
 }
 
-/* =========================
-   READ MORE LINKS + ICON (Google only)
-   ========================= */
+
 article p:last-of-type a{
   font-family:"Times New Roman", Times, serif;
   font-size:13px;
@@ -208,7 +184,6 @@ article p:last-of-type a{
   text-decoration:underline;
 }
 
-/* Use local arrow.png file */
 article a[href*="google.com"]::after{
   content:"";
   display:inline-block;
@@ -219,14 +194,6 @@ article a[href*="google.com"]::after{
   background:url("arrow.png") no-repeat center / contain;
 }
 
-/* =========================
-   THANK YOU BOX
-   ========================= */
-/* #thanks{
-  width:92%;
-  margin:0 auto 24px;
-  text-align:right;
-} */
 
 #thanks{
   position: fixed;
@@ -241,10 +208,8 @@ article a[href*="google.com"]::after{
   margin: 0;
 }
 
-/* =========================
-   FOOTER (simple)
-   ========================= */
 footer{
   border-top:1px solid #ddd;
   padding:16px 30px 30px;
+
 }
